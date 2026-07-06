@@ -7,6 +7,16 @@
     <!-- Link to Google Fonts for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Extra styles for the dynamic contact buttons */
+        .contact-buttons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+        .direct-contact-btn { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 16px; border-radius: 6px; font-weight: 700; text-decoration: none; color: #fff; transition: transform 0.2s, opacity 0.2s; font-size: 16px; }
+        .direct-contact-btn:hover { transform: translateY(-3px); opacity: 0.9; }
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-telegram { background-color: #0088cc; }
+        .btn-email { background-color: #d44638; }
+        .nav-username { font-weight: 600; color: #ffeb3b; font-size: 14px; background: rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 20px; text-decoration: none; }
+    </style>
 </head>
 <body>
 
@@ -31,8 +41,8 @@
                     </ul>
                 </li>
                 
-                <!-- Profile Link to Account Creation Page -->
-                <li class="nav-icons">
+                <!-- Profile Target Item (Dynamically changes via JavaScript) -->
+                <li class="nav-icons" id="profileContainer">
                     <a href="login.html" class="user-icon">👤</a>
                 </li>
             </ul>
@@ -183,48 +193,27 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- UPDATED: DYNAMIC CONVENIENT CONTACT ACTIONS SECTION -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">CONTACT</h2>
-            <div class="contact-grid">
-                
-                <!-- Info Column -->
-                <div class="contact-info-block">
-                    <div class="info-item">
-                        <h4>📧 Email</h4>
-                        <p>georgedick828@gmail.com</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>✈️ Telegram</h4>
-                        <p>@Forexhunter230 - UNITED STATES</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>📍 Address</h4>
-                        <p>Manhattan, New York, NY, United States</p>
-                        <p class="hours">⏰ Mon-Fri - 08:00-19:00</p>
-                    </div>
-                </div>
+            <h2 class="section-title">CONTACT ME INSTANTLY</h2>
+            <p style="text-align: center; color: #fff; margin-bottom: 30px; opacity: 0.9;">Ready to purchase or start your mentorship? Select your preferred channel below to reach me instantly:</p>
+            
+            <div class="contact-buttons-grid">
+                <!-- WhatsApp Access -->
+                <a href="https://wa.me/2347025275190?text=Hello%20AyomiBTC,%20I%20want%20to%20enroll%20in%20one%20of%20your%20premium%20courses." target="_blank" class="direct-contact-btn btn-whatsapp">
+                    <span>💬 WhatsApp Chat</span>
+                </a>
 
-                <!-- Form Column -->
-                <div class="contact-form-block">
-                    <form onsubmit="event.preventDefault(); alert('Message sent!');">
-                        <div class="form-group">
-                            <input type="text" placeholder="Name *" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email address *" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Message *" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">CONTACT US</button>
-                    </form>
-                </div>
+                <!-- Telegram Access -->
+                <a href="https://t.me/Forexhunter230" target="_blank" class="direct-contact-btn btn-telegram">
+                    <span>✈️ Telegram Channel</span>
+                </a>
 
+                <!-- Mail Access -->
+                <a href="mailto:georgedick828@gmail.com?subject=AyomiBTC%20Course%20Enrollment" class="direct-contact-btn btn-email">
+                    <span>📧 Direct Email</span>
+                </a>
             </div>
         </div>
     </section>
@@ -233,6 +222,19 @@
     <footer class="main-footer">
         <p>AyomiBTC Copyright © 2026 All rights reserved</p>
     </footer>
+
+    <!-- INTERACTIVE MEMORY SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Check if user has an active account name in local memory
+            const savedUser = localStorage.getItem('username');
+            if (savedUser) {
+                const container = document.getElementById('profileContainer');
+                // Replace profile icon with customized greeting layout
+                container.innerHTML = `<a href="#" class="nav-username" onclick="if(confirm('Log out of ${savedUser}?')){localStorage.removeItem('username');window.location.reload();}">Hi, ${savedUser} ▾</a>`;
+            }
+        });
+    </script>
 
 </body>
 </html>
