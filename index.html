@@ -7,37 +7,6 @@
     <!-- Link to Google Fonts for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Dropdown Visibility Fixes embedded directly into header */
-        .dropdown { position: relative; }
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #1a237e !important;
-            list-style: none;
-            padding: 10px 0;
-            border-radius: 4px;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 2000;
-        }
-        .dropdown-menu li { width: 100%; }
-        .dropdown-menu li a {
-            display: block;
-            padding: 10px 20px;
-            font-size: 14px;
-            color: #ffffff !important;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-        .dropdown-menu li a:hover {
-            background-color: #ffeb3b !important;
-            color: #1a237e !important;
-        }
-        .dropdown:hover .dropdown-menu { display: block; }
-    </style>
 </head>
 <body>
 
@@ -62,13 +31,31 @@
                     </ul>
                 </li>
                 
-                <!-- Profile Redirect Button -->
+                <!-- Profile Action Button (Triggers Modal) -->
                 <li class="nav-icons">
-                    <a href="https://app.site123.com/manager/wizard.php?wu=6834a723e392e-6834a723e3930-6834a723e3931&from=dash#" target="_blank" class="user-icon">👤</a>
+                    <a href="#" class="user-icon" onclick="openLoginModal(); return false;">👤</a>
                 </li>
             </ul>
         </nav>
     </header>
+
+    <!-- LOGIN MODAL POPUP -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-card">
+            <span class="close-modal-btn" onclick="closeLoginModal()">&times;</span>
+            <div class="modal-header">
+                <h3>Please enter your email</h3>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="event.preventDefault(); alert('Account sign-in initialized!'); closeLoginModal();">
+                    <div class="form-group">
+                        <input type="email" placeholder="example@example.com *" required>
+                    </div>
+                    <button type="submit" class="modal-submit-btn">SIGN IN OR CREATE AN ACCOUNT</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- HERO BANNER -->
     <section id="home" class="hero-section">
@@ -264,6 +251,23 @@
     <footer class="main-footer">
         <p>AyomiBTC Copyright © 2026 All rights reserved</p>
     </footer>
+
+    <!-- LIGHTWEIGHT WINDOW CONTROLLER INTERACTION -->
+    <script>
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+        // Closes window smoothly if user clicks outside the box layout canvas area
+        window.onclick = function(event) {
+            var modal = document.getElementById('loginModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
