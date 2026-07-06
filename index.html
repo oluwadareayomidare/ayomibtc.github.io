@@ -8,6 +8,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Prevents the webpage from breaking layout sideways on smartphones */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive Navbar layout fix for small screens seen in Screenshot_20260706-041019.jpg */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 10px;
+                text-align: center;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 10px;
+                padding: 0;
+            }
+            .nav-links li {
+                font-size: 13px;
+            }
+        }
+
         /* Extra styles for the dynamic contact buttons */
         .contact-buttons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
         .direct-contact-btn { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 16px; border-radius: 6px; font-weight: 700; text-decoration: none; color: #fff; transition: transform 0.2s, opacity 0.2s; font-size: 16px; }
@@ -15,7 +42,7 @@
         .btn-whatsapp { background-color: #25D366; }
         .btn-telegram { background-color: #0088cc; }
         .btn-email { background-color: #d44638; }
-        .nav-username { font-weight: 600; color: #ffeb3b; font-size: 14px; background: rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 20px; text-decoration: none; }
+        .nav-username { font-weight: 600; color: #ffeb3b; font-size: 13px; background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 20px; text-decoration: none; display: inline-block; }
     </style>
 </head>
 <body>
@@ -197,11 +224,11 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title">CONTACT US</h2>
-            <p style="text-align: center; color: #fff; margin-bottom: 30px; opacity: 0.9;">Ready to purchase or start your mentorship? Select your preferred channel below to reach me instantly:</p>
+            <p style="text-align: center; color: #fff; margin-bottom: 30px; opacity: 0.9;">Ready to purchase or start your mentorship? Select your preferred channel below to reach us instantly:</p>
             
             <div class="contact-buttons-grid">
                 <!-- WhatsApp Access -->
-                <a href="https://wa.me/2347025275190?text=Hello%20AyomiBTC,%20I%20want%20to%20enroll%20in%20one%20of%20your%20premium%20courses." target="_blank" class="direct-contact-btn btn-whatsapp">
+                <a href="https://wa.me/2349130751076?text=Hello%20AyomiBTC,%20I%20want%20to%20enroll%20in%20one%20of%20your%20premium%20courses." target="_blank" class="direct-contact-btn btn-whatsapp">
                     <span>💬 WhatsApp Chat</span>
                 </a>
 
@@ -211,7 +238,7 @@
                 </a>
 
                 <!-- Mail Access -->
-                <a href="mailto:georgedick828@gmail.com?subject=AyomiBTC%20Course%20Enrollment" class="direct-contact-btn btn-email">
+                <a href="mailto:georgedick828@gmail.com?subject=AyomiBTC%20Enrollment%20Inquiry" class="direct-contact-btn btn-email">
                     <span>📧 Direct Email</span>
                 </a>
             </div>
