@@ -32,10 +32,11 @@
             <p>Join AyomiBTC for financial growth programs</p>
         </div>
         <div class="auth-body">
-            <form onsubmit="event.preventDefault(); alert('Registration successful! Welcome to AyomiBTC.'); window.location.href='index.html';">
+            <!-- Form saves full name to local browser memory upon submission -->
+            <form onsubmit="event.preventDefault(); const name = document.getElementById('fullName').value; localStorage.setItem('username', name); alert('Registration successful! Welcome, ' + name); window.location.href='index.html';">
                 <div class="form-group">
                     <label>Full Name *</label>
-                    <input type="text" placeholder="John Doe" required>
+                    <input type="text" id="fullName" placeholder="John Doe" required>
                 </div>
                 <div class="form-group">
                     <label>Email Address *</label>
