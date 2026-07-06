@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyomiBTC - Product Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #f4f6f9; color: #333; min-height: 100vh; padding: 40px 20px; }
+        .preview-container { max-width: 900px; margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; padding: 40px; }
+        .back-nav { margin-bottom: 20px; }
+        .back-nav a { color: #1a237e; text-decoration: none; font-weight: 600; }
+        .product-layout { display: flex; gap: 40px; flex-wrap: wrap; }
+        .product-media { flex: 1; min-width: 300px; background: #f8f9fa; border-radius: 8px; display: flex; justify-content: center; align-items: center; font-size: 80px; height: 350px; border: 2px dashed #ccc; }
+        .product-details { flex: 1; min-width: 300px; }
+        .product-details h1 { color: #1a237e; font-size: 28px; margin-bottom: 10px; }
+        .price { font-size: 24px; font-weight: 700; color: #ff5858; margin-bottom: 20px; }
+        
+        /* INCLUDED FILES CHECKLIST */
+        .file-list-box { background: #f8f9fa; padding: 20px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #1a237e; }
+        .file-list-box h4 { color: #1a237e; margin-bottom: 10px; font-size: 16px; }
+        .file-item { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 14px; color: #555; }
+        .file-icon { font-size: 16px; }
+
+        /* RESTRICTED / BLURRED CONTENT LAYER */
+        .restricted-zone { position: relative; border: 1px solid #ffc107; background-color: #fffde7; padding: 25px; border-radius: 6px; margin-top: 20px; overflow: hidden; }
+        .blurred-text { filter: blur(4px); user-select: none; pointer-events: none; margin-bottom: 10px; opacity: 0.6; }
+        .lock-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        .lock-icon { font-size: 36px; margin-bottom: 10px; }
+        .lock-title { font-weight: 700; color: #d32f2f; margin-bottom: 5px; }
+        
+        .action-btn { display: inline-block; width: 100%; text-align: center; padding: 14px; background-color: #1a237e; color: #fff; text-decoration: none; font-weight: 700; border-radius: 4px; margin-top: 20px; transition: background 0.2s; }
+        .action-btn:hover { background-color: #ffeb3b; color: #1a237e; }
+    </style>
+</head>
+<body>
+
+    <div class="preview-container">
+        <div class="back-nav"><a href="index.html">← Back to Store</a></div>
+        <div class="product-layout">
+            <div class="product-media">📦</div>
+            <div class="product-details">
+                <h1>Premium Course Syllabus & Assets</h1>
+                <p class="price">Access Restricted</p>
+                <p>This package contains full masterclass video material, step-by-step documentation resources, and direct strategy files.</p>
+                
+                <!-- NEW: Dynamic File Overview -->
+                <div class="file-list-box">
+                    <h4>📁 Files Included in this Package:</h4>
+                    <div class="file-item"><span class="file-icon">📄</span> 🎬 Welcome to Coding Setup Guide.mp4</div>
+                    <div class="file-item"><span class="file-icon">📕</span> 📊 Market Psychology & Discipline.pdf</div>
+                    <div class="file-item"><span class="file-icon">📄</span> ⚙️ Full Source Code Repository Templates</div>
+                </div>
+
+                <div class="restricted-zone">
+                    <div class="blurred-text">Module 1: Hidden Market Entry Formulas (1hr 40m)</div>
+                    <div class="blurred-text">Module 2: Risk Management Architecture Analysis</div>
+                    <div class="blurred-text">Module 3: Direct Mentorship Private Portal Setup</div>
+                    
+                    <div class="lock-overlay">
+                        <span class="lock-icon">🔒</span>
+                        <div class="lock-title">CONTENT ACCESS RESTRICTED</div>
+                        <p style="font-size: 13px; color: #555;">Please complete enrollment to open and download these files.</p>
+                    </div>
+                </div>
+                
+                <a href="index.html#contact" class="action-btn">CONTACT AGENT TO ENROLL</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
