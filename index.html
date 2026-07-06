@@ -7,6 +7,37 @@
     <!-- Link to Google Fonts for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Dropdown Visibility Fixes embedded directly into header */
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1a237e !important;
+            list-style: none;
+            padding: 10px 0;
+            border-radius: 4px;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 2000;
+        }
+        .dropdown-menu li { width: 100%; }
+        .dropdown-menu li a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #ffffff !important;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .dropdown-menu li a:hover {
+            background-color: #ffeb3b !important;
+            color: #1a237e !important;
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+    </style>
 </head>
 <body>
 
@@ -20,9 +51,20 @@
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
-                <li class="dropdown"><a href="#more" class="dropdown-toggle">More ▾</a></li>
+                
+                <!-- Expanded More Dropdown Menu -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" onclick="return false;">More ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#shop">Store</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Profile Redirect Button -->
                 <li class="nav-icons">
-                    <a href="#profile" class="user-icon">👤</a>
+                    <a href="https://app.site123.com/manager/wizard.php?wu=6834a723e392e-6834a723e3930-6834a723e3931&from=dash#" target="_blank" class="user-icon">👤</a>
                 </li>
             </ul>
         </nav>
@@ -85,7 +127,7 @@
     </section>
 
     <!-- TESTIMONIALS SECTION -->
-    <section class="testimonials-section">
+    <section id="testimonials" class="testimonials-section">
         <div class="container">
             <h2 class="section-title">TESTIMONIALS</h2>
             <div class="testimonials-grid">
@@ -182,7 +224,7 @@
                 <div class="contact-info-block">
                     <div class="info-item">
                         <h4>📧 Email</h4>
-                        <p>oluwadareayomidare@gmail.com</p>
+                        <p>georgedick828@gmail.com</p>
                     </div>
                     <div class="info-item">
                         <h4>✈️ Telegram</h4>
